@@ -11,7 +11,19 @@ class MethodChannelDynamicAppIcon extends DynamicAppIconPlatform {
 
   @override
   Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
+    final version =
+        await methodChannel.invokeMethod<String>('getPlatformVersion');
     return version;
+  }
+
+  @override
+  Future<void> androidSetIcon(
+      {required String icon, required List<String> listAvailableIcon}) async {
+    Map<String, dynamic> data = {
+      'icon': icon,
+      'listAvailableIcon': listAvailableIcon
+    };
+
+    await methodChannel.invokeMethod<bool>('setIcon', data);
   }
 }

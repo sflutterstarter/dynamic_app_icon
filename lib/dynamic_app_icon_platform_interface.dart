@@ -26,4 +26,9 @@ abstract class DynamicAppIconPlatform extends PlatformInterface {
   Future<String?> getPlatformVersion() {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
+
+  Future<void> androidSetIcon(
+      {required String icon, required List<String> listAvailableIcon}) {
+    throw UnimplementedError('androidSetIcon() has not been implemented.');
+  }
 }

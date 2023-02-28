@@ -7,13 +7,17 @@ import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 class MockDynamicAppIconPlatform
     with MockPlatformInterfaceMixin
     implements DynamicAppIconPlatform {
-
   @override
   Future<String?> getPlatformVersion() => Future.value('42');
+
+  @override
+  Future<void> androidSetIcon(
+      {required String icon, required List<String> listAvailableIcon}) async {}
 }
 
 void main() {
-  final DynamicAppIconPlatform initialPlatform = DynamicAppIconPlatform.instance;
+  final DynamicAppIconPlatform initialPlatform =
+      DynamicAppIconPlatform.instance;
 
   test('$MethodChannelDynamicAppIcon is the default instance', () {
     expect(initialPlatform, isInstanceOf<MethodChannelDynamicAppIcon>());
