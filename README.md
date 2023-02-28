@@ -1,0 +1,1 @@
+# dynamic_app_icon
