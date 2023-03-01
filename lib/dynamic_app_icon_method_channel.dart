@@ -26,4 +26,13 @@ class MethodChannelDynamicAppIcon extends DynamicAppIconPlatform {
 
     await methodChannel.invokeMethod<bool>('setIcon', data);
   }
+
+  @override
+  Future<void> androidSendBroadcast({required String action}) async {
+    Map<String, dynamic> data = {
+      'action': action,
+    };
+
+    await methodChannel.invokeMethod<bool>('sendBroadcast', data);
+  }
 }

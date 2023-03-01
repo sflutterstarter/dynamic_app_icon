@@ -10,4 +10,8 @@ class DynamicAppIcon {
     return DynamicAppIconPlatform.instance
         .androidSetIcon(icon: icon, listAvailableIcon: listAvailableIcon);
   }
+
+  Future<void> androidSendBroadcast({required String action}) {
+    return DynamicAppIconPlatform.instance.androidSendBroadcast(action: action);
+  }
 }

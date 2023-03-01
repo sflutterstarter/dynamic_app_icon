@@ -13,6 +13,9 @@ class MockDynamicAppIconPlatform
   @override
   Future<void> androidSetIcon(
       {required String icon, required List<String> listAvailableIcon}) async {}
+
+  @override
+  Future<void> androidSendBroadcast({required String action}) async {}
 }
 
 void main() {

@@ -52,6 +52,18 @@ class DynamicAppIconPlugin: FlutterPlugin, ActivityAware, MethodCallHandler {
             result.error("1", e.message, e)
           }
         }
+        "sendBroadcast" -> {
+          try {
+            val action = call.argument<String>("action")
+            val intent = Intent(action)
+            intent.setPackage(applicationContext!!.packageName)
+            this.activity?.sendBroadcast(intent)
+            result.success(true)
+          } catch (e: Exception) {
+            e.printStackTrace()
+            result.error("1", e.message, e)
+          }
+        }
         else -> {
           result.notImplemented()
         }

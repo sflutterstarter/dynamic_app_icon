@@ -31,4 +31,9 @@ abstract class DynamicAppIconPlatform extends PlatformInterface {
       {required String icon, required List<String> listAvailableIcon}) {
     throw UnimplementedError('androidSetIcon() has not been implemented.');
   }
+
+  Future<void> androidSendBroadcast({required String action}) {
+    throw UnimplementedError(
+        'androidSendBroadcast() has not been implemented.');
+  }
 }
